@@ -10,12 +10,12 @@
       <div class="col-lg-6">
         <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
           <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">SAMY LE ROI DE JEANNE D'ARC</font>
+            <font style="vertical-align: inherit;">ADEL LE ROI DE NOTRE DAME</font>
           </font>
         </h1>
         <p class="lead">
           <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">SI VOUS VOYEZ SAMY VOUS DEVEZ LE SALUEZ. LE RESPECT EST LA BASE DE LA VIE EN SOCIETE.</font>
+            <font style="vertical-align: inherit;">SI VOUS VOYEZ ADEL VOUS DEVEZ LE SALUEZ. LE RESPECT EST LA BASE DE LA VIE EN SOCIETE.</font>
           </font>
         </p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
