@@ -1,3 +1,14 @@
+<?php
+$mainMenu = [
+  ["page" => "index.php", "title" => "accueil", "meta_descrption" => "TechTrendz, l'actu tech !"],
+  ["page" => "a_propos.php", "title" => "A propos", "meta_descrption" => "L'histoire du site TechTrendz"],
+  ["page" => "actualites.php", "title" => "Actualités", "meta_descrption" => "Découvrez nos actualités"],
+  
+
+];
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -21,11 +32,12 @@
       </div>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-        <li><a href="#" class="nav-link px-2">Features</a></li>
-        <li><a href="#" class="nav-link px-2">Pricing</a></li>
-        <li><a href="#" class="nav-link px-2">FAQs</a></li>
-        <li><a href="#" class="nav-link px-2">About</a></li>
+
+        <?php foreach ($mainMenu as $key => $MenuItem) { ?>
+          <li><a href="<?=$MenuItem["page"]; ?>" class="nav-link px-2"><?=$MenuItem["title"]; ?></a></li>
+
+        <?php } ?>
+
       </ul>
 
       <div class="col-md-3 text-end">
