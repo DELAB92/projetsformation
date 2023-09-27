@@ -1,11 +1,12 @@
 <?php
 $mainMenu = [
-  ["page" => "index.php", "title" => "accueil", "meta_descrption" => "TechTrendz, l'actu tech !"],
-  ["page" => "a_propos.php", "title" => "A propos", "meta_descrption" => "L'histoire du site TechTrendz"],
-  ["page" => "actualites.php", "title" => "Actualités", "meta_descrption" => "Découvrez nos actualités"],
-  
+  "index.php" => ["menu_title" => "Accueil", "head_title" => "Accueil TechTrendz", "meta_description" => "TechTrendz, l'actu tech !"],
+  "actualites.php" => ["menu_title" => "Actualités", "head_title" => "Actualités tech et dev", "meta_description" => "Découvrez nos actualités"],
+  "a_propos.php" => ["menu_title" => "A propos", "head_title" => "A propos de TechTrendz", "meta_description" => "L'histoire du site TechTrendz"],
 
 ];
+
+$currentPage = basename($_SERVER["SCRIPT_NAME"]);
 
 ?>
 
@@ -14,8 +15,10 @@ $mainMenu = [
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" $content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechTrendz</title>
+  <meta name="description" content="<?= @$mainMenu[$currentPage]["meta_description"] ?>">
+  <title><?= $mainMenu[$currentPage]["head_title"] ?></title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/override-bootstrap.css">
@@ -31,10 +34,15 @@ $mainMenu = [
         </a>
       </div>
 
-      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <ul class="nav nav-pills col-12 col-md-auto mb-2 justify-content-center mb-md-0">
 
         <?php foreach ($mainMenu as $key => $MenuItem) { ?>
-          <li><a href="<?=$MenuItem["page"]; ?>" class="nav-link px-2"><?=$MenuItem["title"]; ?></a></li>
+          <li class="nav-item"><a href="<?= $key; ?>" class="nav-link px-2 <?php
+                                                                            if ($key === $currentPage) {
+                                                                              echo "active";
+                                                                            }
+                                                                            ?>"><?= $MenuItem["menu_title"]; ?></a>
+          </li>
 
         <?php } ?>
 
